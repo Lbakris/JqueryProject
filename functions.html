@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Functions</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <script>
+            $(document).ready(function() {
+                $("h1").click(function() {
+                    alert("You clicked me real good.");
+                });
+                // .focus
+                $("#textbox").focus(function() {
+                    $("span").show();
+                    $("span").fadeOut(2000);
+                });
+                // .addClass
+                $("li").click(function() {
+                    $(this).addClass('highlight');
+                });
+                // .val
+                // .text
+                $("#submit").click(function() {
+                    var newli = $("#textbox").text();
+                    $("li").append(newli);
+                });
+                // .attr
+                // .html
+                // .data
+                // .before
+                // .after
+                // .append
+                // .show
+                $("#show").click(function() {
+                    $("#image").show();
+                });
+                // .hide
+                $("#hide").click(function() {
+                    $("#image").hide();
+                });
+                // .toggle
+                $("#fadeToggle").click(function() {
+                    $("#image").toggle();
+                });
+                // .fadeIn
+                $("#fadeIn").click(function() {
+                    $("#image").fadeIn();
+                });
+                // .fadeOut
+                $("#fadeOut").click(function() {
+                    $("#image").fadeOut();
+                });
+                // .slideDown
+                // .slideUp
+                // .slideToggle
+            })
+        </script>
+
+        <div class="wrapper">
+            <h1>Click me.</h1>
+            <button type="button" name="fadeIn" id="fadeIn">Fade Image In</button>
+            <button type="button" name="fadeOut" id="fadeOut">Fade Image Out</button>
+            <button type="button" name="show" id="show">Show Image</button>
+            <button type="button" name="hide" id="hide">Hide Image</button>
+            <button type="button" name="fadeToggle" id="fadeToggle">Toggle Image Show</button>
+            <!-- <img id="image" src="cave.jpg" alt="Above and Below" /> -->
+            <input type="text" name="textbox" placeholder="Write list items here" id="textbox">
+            <button type="submit" name="textbox" id="submit">Submit Text</button>
+            <p><span>Be careful what you write.</span></p>
+            <ul>
+                <li>The list starts here.</li>
+                <li>You can highlight list items by clicking on them.</li>
+            </ul>
+        </div>
+    </body>
+</html>

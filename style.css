@@ -1,0 +1,17 @@
+button {
+    display: inline-block;
+}
+
+span {
+    display: none;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+#textbox {
+    margin-top: 50px;
+    display: inline;
+    width: 500px;
+}
