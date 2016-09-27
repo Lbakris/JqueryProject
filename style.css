@@ -12,6 +12,10 @@ span {
 
 #textbox {
     margin-top: 50px;
-    display: inline;
+    display: block;
     width: 500px;
+}
+
+#image {
+    display: block;
 }
