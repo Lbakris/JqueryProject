@@ -21,15 +21,31 @@
                 $("li").click(function() {
                     $(this).addClass('highlight');
                 });
-                // .val
                 // .text
-                $("#submit").click(function() {
-                    var newli = $("#textbox").text();
-                    // .append
-                    $("li").append(newli);
+                // .val
+                $("#submitname").click(function() {
+                    var newname = $("#textbox").val();
+                    $("h2").text(newname);
+                });
+                // .append
+                $("#submitapli").click(function() {
+                    var addli = $("#textbox").val();
+                    $("li").append(addli);
+                });
+                $("#submitli").click(function() {
+                    var newli = "<li>" + $("#textbox").val() + "</li>";
+                    $(".list").append(newli);
+                });
+                // .html
+                $("#submithtml").click(function() {
+                    var newhtml = $("#textbox").val();
+                    $("#added").html(newhtml);
                 });
                 // .attr
-                // .html
+                $("#submitimg").click(function() {
+                    var imgh = $("#textbox").val();
+                    $("#image").attr('height', imgh);
+                });
                 // .data
                 // .before
                 // .after
@@ -46,28 +62,17 @@
                     $("#image").toggle();
                 });
                 // .fadeIn
-                $("#fadeIn").click(function(){
+                $("#fadeIn").click(function() {
                     $("#image").fadeIn();
                 });
                 // .fadeOut
-                $("#fadeOut").click(function(){
+                $("#fadeOut").click(function() {
                     $("#image").fadeOut();
                 });
                 // .slideDown
-                $("#image").click(function(){
-                  $("#MC").slideDown("slow");
-                });
-                // slideup
-                $("#fadeOut").click(function(){
-                  $("#MC").slideUp("slow")
-                });
+                // .slideUp
                 // .slideToggle
-                $("#show").click(function(){
-                  $("#CDJ").slideToggle("slow",function(){
-                    })
-                  });
-                //.slideToggle
-            });
+            })
         </script>
 
         <div class="wrapper">
@@ -77,16 +82,21 @@
             <button type="button" name="show" id="show">Show Image</button>
             <button type="button" name="hide" id="hide">Hide Image</button>
             <button type="button" name="fadeToggle" id="fadeToggle">Toggle Image Show</button>
-            <img src="cave.jpg" id="image" alt="Above and Below" />
-            <img src="mc.png" id="MC" alt="oh no" />
-            <img src="CDJ.png" id="CDJ" alt="uh oh" />
-            <input type="text" name="textbox" placeholder="Write list items here" id="textbox">
-            <button type="submit" name="textbox" id="submit">Submit Text</button>
+            <img id="image" src="cave.jpg" alt="Above and Below" />
+            <input type="text" name="textbox" placeholder="Write stuff here" id="textbox">
+            <button type="submit" name="submitbtn" id="submitimg">Submit Image Height</button>
+            <button type="submit" name="submitbtn" id="submitname">Submit List Name</button>
+            <button type="submit" name="submitbtn" id="submitli">Add List Item</button>
+            <button type="submit" name="submitbtn" id="submitapli">Append All Items</button>
+            <button type="submit" name="submitbtn" id="submithtml">Submit html Below List</button>
             <p><span>Be careful what you write.</span></p>
-            <ul>
+            <h2>The Name of the List</h2>
+            <ul class="list">
                 <li>The list starts here.</li>
                 <li>You can highlight list items by clicking on them.</li>
             </ul>
+            <div id="added">
+            </div>
         </div>
     </body>
 </html>
